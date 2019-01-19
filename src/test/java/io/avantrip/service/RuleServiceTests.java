@@ -44,6 +44,7 @@ public class RuleServiceTests {
             .withDescription("description")
             .withActions("actions")
             .withScored(100)
+            .withActive(true)
             .withConditions("conditions").build();
 
         RuleEntity ruleEntity = ruleRepository.save(rule);

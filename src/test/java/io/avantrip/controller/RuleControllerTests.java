@@ -43,6 +43,7 @@ public class RuleControllerTests {
             .withDescription("Test Desciption")
             .withActions("Test")
             .withScored(100)
+            .withActive(true)
             .withConditions("Test").build();
 
         mockMvc.perform(

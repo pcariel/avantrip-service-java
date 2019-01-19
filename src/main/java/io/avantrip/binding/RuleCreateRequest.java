@@ -21,6 +21,9 @@ public class RuleCreateRequest {
     @ApiParam(value = "scored", allowEmptyValue = false, required = true, defaultValue = "Test - Rule - Avantrip")
     private Integer scored;
 
+    @ApiParam(value = "active", allowEmptyValue = false, required = true, defaultValue = "Test - Rule - Avantrip")
+    private Boolean active;
+
     public String getName() {
         return name;
     }
@@ -61,9 +64,17 @@ public class RuleCreateRequest {
         this.scored = scored;
     }
 
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     @Override
     public String toString() {
-        return String.format("Name -> %s, Description -> %s, Conditions -> %s, Actions -> %s, Scored -> %s", 
-                name, description, conditions, actions, scored);
+        return String.format("Name -> %s, Description -> %s, Conditions -> %s, Actions -> %s, Scored -> %s, Active -> %s", 
+                name, description, conditions, actions, scored, active.toString());
     }
 }

@@ -16,13 +16,51 @@ public class FlightCreateRequest {
     public static class Credicard {
         private String name;
         private String number;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        } 
+
+        public String getNumber() {
+            return this.number;
+        }
+
+        public void setNumber(String number) {
+            this.number = number;
+        }
     }
 
     public static class Person {
         private String name;
         private String lastName;
-        private Integer dni;
+        private String dni;
         
-        
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public String getDni() {
+            return dni;
+        }
+
+        public void setDni(String dni) {
+            this.dni = dni;
+        }
     }
 }

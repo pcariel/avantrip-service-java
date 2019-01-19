@@ -11,6 +11,7 @@ public class RuleEntityBuilder {
     private String conditions;
     private String actions;
     private Integer scored;
+    private Boolean active;
 
     public RuleEntityBuilder withName(String name) {
         this.name = name;
@@ -37,13 +38,19 @@ public class RuleEntityBuilder {
         return this;
     }
 
+    public RuleEntityBuilder withActive(Boolean active) {
+        this.active = active;
+        return this;
+    }
+
     public RuleEntity build() {
         return new RuleEntity(
             name,
             description,
             conditions,
             actions,
-            scored
+            scored,
+            active
         );
     }
 }
