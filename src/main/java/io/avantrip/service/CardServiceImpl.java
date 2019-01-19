@@ -22,14 +22,13 @@ public class CardServiceImpl implements CardService {
     public Page<BlackListCard> getAll(Pageable pageable) {
         Page<BlackListCardEntity> blackLists = blackListCardRepository.findAll(pageable);
 
-        Page<BlackListCard> pageBlackList = blackLists
-                .map(new Converter<BlackListCardEntity, BlackListCard>() {
-                    @Override
-                    public BlackListCard convert(BlackListCardEntity source) {
-                        return new BlackListCard().fromEntity(source);
-                    }
+        Page<BlackListCard> pageBlackList = blackLists.map(new Converter<BlackListCardEntity, BlackListCard>() {
+            @Override
+            public BlackListCard convert(BlackListCardEntity source) {
+                return new BlackListCard().fromEntity(source);
+            }
 
-                });
+        });
         return pageBlackList;
     }
 
@@ -41,8 +40,7 @@ public class CardServiceImpl implements CardService {
 
     @Override
     public Boolean isBlackList(String number) {
-        List<BlackListCardEntity> credicards = blackListCardRepository.findAll();
-        return credicards.parallelStream().allMatch(credicard -> credicard.getNumber().equals(number));
+        return blackListCardRepository.existsByNumber(number);
     }
 
 }
