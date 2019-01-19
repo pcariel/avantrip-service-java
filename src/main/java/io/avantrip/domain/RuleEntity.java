@@ -12,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
@@ -38,6 +39,7 @@ public class RuleEntity {
     @Column(name = "scored", nullable = false)
     private Integer scored;
 
+    @Type(type="true_false")
     @Column(name = "active", nullable = false)
     private Boolean active;
 
