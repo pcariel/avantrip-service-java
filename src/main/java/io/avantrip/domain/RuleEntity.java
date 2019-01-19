@@ -23,7 +23,7 @@ public class RuleEntity {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "description")
@@ -34,6 +34,9 @@ public class RuleEntity {
 
     @Column(name = "actions")
     private String actions;
+
+    @Column(name = "scored", nullable = false)
+    private Integer scored;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
@@ -49,11 +52,12 @@ public class RuleEntity {
 
     }
     
-    public RuleEntity(String name, String description, String conditions, String actions) {
+    public RuleEntity(String name, String description, String conditions, String actions, Integer scored) {
         this.name = name;
         this.description = description;
         this.conditions = conditions;
         this.actions = actions;
+        this.scored = scored;
     }
 
     public Long getId() {
@@ -93,5 +97,13 @@ public class RuleEntity {
 
     public void setActions(String actions) {
         this.actions = actions;
+    }
+
+    public Integer getScored() {
+        return this.scored;
+    }
+
+    public void setScored(Integer scored) {
+        this.scored = scored;
     }
 }

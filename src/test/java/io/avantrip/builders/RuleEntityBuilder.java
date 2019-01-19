@@ -10,6 +10,7 @@ public class RuleEntityBuilder {
     private String description;
     private String conditions;
     private String actions;
+    private Integer scored;
 
     public RuleEntityBuilder withName(String name) {
         this.name = name;
@@ -31,12 +32,18 @@ public class RuleEntityBuilder {
         return this;
     }
 
+    public RuleEntityBuilder withScored(Integer scored) {
+        this.scored = scored;
+        return this;
+    }
+
     public RuleEntity build() {
         return new RuleEntity(
             name,
             description,
             conditions,
-            actions
+            actions,
+            scored
         );
     }
 }

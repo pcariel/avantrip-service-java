@@ -33,8 +33,8 @@ public class RuleServiceTests {
     private RuleEntity rule;
     @Before
     public void setup() {
-        RuleEntityBuilder ruleEntityBuilder = new RuleEntityBuilder();
-        this.rule = ruleRepository.save(ruleEntityBuilder.build());
+        //RuleEntityBuilder ruleEntityBuilder = new RuleEntityBuilder();
+        //this.rule = ruleRepository.save(ruleEntityBuilder.build());
     }
 
     @Test
@@ -43,6 +43,7 @@ public class RuleServiceTests {
             .withName("Test Rule - Avantrip")
             .withDescription("description")
             .withActions("actions")
+            .withScored(100)
             .withConditions("conditions").build();
 
         RuleEntity ruleEntity = ruleRepository.save(rule);

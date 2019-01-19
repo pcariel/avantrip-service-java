@@ -42,6 +42,7 @@ public class RuleControllerTests {
             .withName("Test Rule - Avantrip")
             .withDescription("Test Desciption")
             .withActions("Test")
+            .withScored(100)
             .withConditions("Test").build();
 
         mockMvc.perform(

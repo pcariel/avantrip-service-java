@@ -29,7 +29,8 @@ public class RuleServiceImpl implements RuleService {
             request.getName(), 
             request.getDescription(), 
             request.getConditions(), 
-            request.getActions()));
+            request.getActions(),
+            request.getScored()));
         return new Rule().fromEntity(ruleEntity);
     }
 

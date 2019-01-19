@@ -12,11 +12,14 @@ public class RuleCreateRequest {
     @ApiParam(value = "description", allowEmptyValue = false, required = true, defaultValue = "Test - Rule - Avantrip")
     private String description;
 
-    @ApiParam(value = "conditions", allowEmptyValue = false, required = true, defaultValue = "Test - Rule - Avantrip")
+    @ApiParam(value = "conditions", allowEmptyValue = false, required = false, defaultValue = "Test - Rule - Avantrip")
     private String conditions;
 
     @ApiParam(value = "actions", allowEmptyValue = false, required = true, defaultValue = "Test - Rule - Avantrip")
     private String actions;
+
+    @ApiParam(value = "scored", allowEmptyValue = false, required = true, defaultValue = "Test - Rule - Avantrip")
+    private Integer scored;
 
     public String getName() {
         return name;
@@ -50,9 +53,17 @@ public class RuleCreateRequest {
         this.actions = actions;
     }
 
+    public Integer getScored() {
+        return this.scored;
+    }
+
+    public void setScored(Integer scored) {
+        this.scored = scored;
+    }
+
     @Override
     public String toString() {
-        return String.format("Name -> %s, Description -> %s, Conditions -> %s, Actions -> %s", 
-                name, description, conditions, actions);
+        return String.format("Name -> %s, Description -> %s, Conditions -> %s, Actions -> %s, Scored -> %s", 
+                name, description, conditions, actions, scored);
     }
 }
