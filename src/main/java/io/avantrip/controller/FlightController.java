@@ -14,5 +14,5 @@ import io.swagger.annotations.ApiOperation;
 @Api(value = "Avantrip - Flight", description = "Fraudulent Service")
 public class FlightController {
     private final Logger log = LoggerFactory.getLogger(FlightController.class);
-
+    
 }
